@@ -1,0 +1,538 @@
+/* =========================================================
+   ANSUT Theme — Reveal.js v2
+   Couleurs : bleu #004A9F | orange #F47920 | gris #F5F5F5
+   Typo : Tw Cen MT → Century Gothic → Futura → sans-serif
+   Contraintes : pas de logo, pas de trait décoratif
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+/* ── Variables ── */
+:root {
+  --blue:   #004A9F;
+  --orange: #F47920;
+  --white:  #FFFFFF;
+  --gray:   #F5F5F5;
+  --text:   #1A1A2E;
+  --muted:  #5A6B85;
+  --green:  #38A169;
+  --red:    #E53E3E;
+  --font:   'Tw Cen MT', 'Century Gothic', Futura, Nunito, sans-serif;
+  --mono:   'JetBrains Mono', 'Fira Code', Consolas, monospace;
+}
+
+/* ── Reveal base ── */
+.reveal {
+  font-family: var(--font);
+  font-size: 18px;
+  color: var(--text);
+  background: var(--white);
+}
+
+.reveal .slides section {
+  background: var(--white);
+  padding: 36px 56px;
+  box-sizing: border-box;
+  text-align: left;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* ── Slides chapitres (fond bleu) ── */
+.reveal .slides section[data-background-color="#004A9F"] {
+  background: var(--blue);
+  color: var(--white);
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 80px;
+}
+
+/* ── Typographie ── */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-family: var(--font);
+  text-transform: none;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 0.55em;
+}
+
+.reveal h1 {
+  font-size: 2.4em;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.reveal h2 {
+  font-size: 1.85em;
+  color: var(--blue);
+}
+
+.reveal h3 {
+  font-size: 1.25em;
+  color: var(--blue);
+}
+
+[data-background-color="#004A9F"] h2 {
+  color: var(--white) !important;
+  font-size: 2em;
+}
+
+.reveal p {
+  font-size: 1em;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.reveal ul, .reveal ol {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+.reveal li {
+  font-size: 1em;
+  line-height: 1.7;
+  margin-bottom: 0.3em;
+}
+
+[data-background-color="#004A9F"] li {
+  color: var(--white);
+}
+
+/* ── Accent orange ── */
+.accent { color: var(--orange); }
+
+/* ── Slide titre principale ── */
+.title-content { display: flex; flex-direction: column; gap: 14px; }
+
+.ansut-badge {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--orange);
+  border: 2px solid var(--orange);
+  padding: 4px 12px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+
+.subtitle  { font-size: 1.05em; color: rgba(255,255,255,0.85); margin: 0; }
+.meta-line { font-size: 0.85em; color: rgba(255,255,255,0.55); margin: 0; }
+
+/* ── Slide chapitre ── */
+.ch-label {
+  font-size: 0.78em;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 10px;
+}
+
+.ch-objectives {
+  margin-top: 22px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.ch-objectives li {
+  padding: 9px 0 9px 26px;
+  position: relative;
+  font-size: 1.02em;
+  color: rgba(255,255,255,0.88) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.ch-objectives li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.ch-time {
+  margin-top: 28px;
+  display: inline-block;
+  background: var(--orange);
+  color: var(--white);
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 0.82em;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ── Objectifs slide 2 ── */
+.programme {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.prog-item {
+  background: var(--gray);
+  border-left: 4px solid var(--blue);
+  padding: 10px 16px;
+  font-size: 0.86em;
+  font-weight: 600;
+  color: var(--blue);
+  border-radius: 0 4px 4px 0;
+  flex: 1;
+  min-width: 130px;
+}
+
+/* ── Cards ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.card {
+  background: var(--gray);
+  border-radius: 8px;
+  padding: 18px 14px;
+  text-align: center;
+  border-top: 3px solid var(--blue);
+}
+
+.card.ac { border-top-color: var(--orange); }
+.card.rd { border-top-color: var(--red); }
+.card.gn { border-top-color: var(--green); }
+
+.card h4 {
+  font-size: 0.92em;
+  font-weight: 700;
+  color: var(--blue);
+  margin: 0 0 5px;
+}
+
+.card p {
+  font-size: 0.78em;
+  color: var(--muted);
+  margin: 0;
+}
+
+.ico { font-size: 2em; line-height: 1; display: block; margin-bottom: 6px; }
+
+/* ── Tables ── */
+.reveal table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 14px;
+  font-size: 0.88em;
+}
+
+.reveal table th {
+  background: var(--blue);
+  color: var(--white);
+  padding: 9px 12px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.reveal table td {
+  padding: 7px 12px;
+  border-bottom: 1px solid #E2E8F0;
+  vertical-align: top;
+}
+
+.reveal table tr:nth-child(even) td { background: var(--gray); }
+
+/* ── V-grid (5V Big Data) ── */
+.v-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.v-card {
+  background: var(--gray);
+  border-radius: 8px;
+  padding: 16px 8px;
+  border-top: 4px solid var(--blue);
+  text-align: center;
+}
+
+.v-card.hi { border-top-color: var(--orange); background: #FFF8F3; }
+
+.v-card .vl { font-size: 1.9em; font-weight: 800; color: var(--blue); line-height: 1; }
+.v-card.hi .vl { color: var(--orange); }
+.v-card .vn { font-size: 0.82em; font-weight: 700; color: var(--blue); margin-top: 4px; }
+.v-card .vd { font-size: 0.68em; color: var(--muted); margin-top: 3px; line-height: 1.3; }
+
+/* ── Timeline (Big Data history) ── */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 16px;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 62px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--blue), var(--orange));
+}
+
+.tl-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 10px 0;
+  position: relative;
+}
+
+.tl-year {
+  min-width: 56px;
+  text-align: right;
+  font-size: 0.78em;
+  font-weight: 800;
+  color: var(--blue);
+  padding-top: 3px;
+}
+
+.tl-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+  margin-top: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.tl-dot.orange { background: var(--orange); }
+
+.tl-content {
+  flex: 1;
+  font-size: 0.88em;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.tl-content strong { color: var(--blue); }
+
+/* ── Nested diagram (IA ⊃ ML ⊃ DL) ── */
+.nest-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px auto;
+  position: relative;
+  width: 340px;
+  height: 190px;
+}
+
+.nest-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.nest-ring.ia {
+  width: 320px; height: 180px;
+  border-color: var(--blue);
+  background: rgba(0,74,159,0.06);
+}
+
+.nest-ring.ml {
+  width: 200px; height: 112px;
+  top: 34px; left: 60px;
+  border-color: var(--orange);
+  background: rgba(244,121,32,0.07);
+}
+
+.nest-ring.dl {
+  width: 100px; height: 56px;
+  top: 67px; left: 110px;
+  border-color: var(--green);
+  background: rgba(56,161,105,0.12);
+}
+
+.nest-label {
+  font-size: 0.7em;
+  font-weight: 700;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+
+.nest-label.ia { color: var(--blue); }
+.nest-label.ml { color: var(--orange); }
+.nest-label.dl { color: var(--green); font-size: 0.62em; padding: 3px 5px; }
+
+/* ── Pipeline steps ── */
+.pipeline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 18px 0;
+  flex-wrap: wrap;
+}
+
+.ps {
+  background: var(--blue);
+  color: white;
+  padding: 10px 13px;
+  font-size: 0.76em;
+  font-weight: 700;
+  text-align: center;
+  min-width: 84px;
+  border-radius: 4px;
+}
+
+.ps.or { background: var(--orange); }
+.ps.gr { background: var(--muted); }
+.pa { color: var(--orange); font-size: 1.3em; padding: 0 3px; }
+
+/* ── Layout helpers ── */
+.two-col   { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+
+/* ── Chiffres clés ── */
+.stat-row { display: flex; gap: 16px; margin-top: 16px; flex-wrap: wrap; }
+
+.stat-box {
+  flex: 1; min-width: 90px;
+  background: var(--gray);
+  border-radius: 8px;
+  padding: 14px;
+  text-align: center;
+}
+
+.stat-box .sn { font-size: 1.8em; font-weight: 800; color: var(--blue); line-height: 1; }
+.stat-box .sn.or { color: var(--orange); }
+.stat-box .sl { font-size: 0.72em; color: var(--muted); margin-top: 4px; }
+
+/* ── Cas concret ── */
+.cas {
+  background: linear-gradient(135deg, #EEF4FF 0%, #FFF8F3 100%);
+  border-left: 5px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  padding: 18px 22px;
+  margin-top: 14px;
+}
+
+.cas-label {
+  font-size: 0.72em;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 6px;
+}
+
+.cas p { font-size: 0.92em; margin: 0; color: var(--text); }
+
+/* ── Highlight ── */
+.hl {
+  background: var(--blue);
+  color: var(--white);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin: 14px 0;
+}
+
+.hl p { color: var(--white); margin: 0; font-size: 1.02em; font-weight: 600; }
+
+/* ── Matrice de Stacey ── */
+.stacey-wrap { display: flex; gap: 22px; align-items: flex-start; margin-top: 10px; }
+.stacey-legend { flex: 0 0 190px; display: flex; flex-direction: column; gap: 7px; font-size: 0.8em; }
+.sl-item { display: flex; align-items: center; gap: 8px; }
+.sl-dot  { width: 13px; height: 13px; border-radius: 3px; flex-shrink: 0; }
+
+/* ── Barre progression ── */
+.reveal .progress { height: 4px; background: rgba(0,74,159,0.12); color: var(--orange); }
+.reveal .progress span { background: var(--orange); transition: width 0.4s ease; }
+
+/* ── Numéro slide ── */
+.reveal .slide-number {
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-family: var(--font);
+  bottom: 14px;
+  right: 18px;
+}
+
+/* ── Contrôles ── */
+.reveal .controls button { color: var(--blue); }
+
+/* ── Code ── */
+.reveal code {
+  font-family: var(--mono);
+  font-size: 0.83em;
+  background: #F0F4FF;
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: var(--blue);
+}
+
+/* ── Blockquote ── */
+.reveal blockquote {
+  background: #EEF4FF;
+  border-left: 4px solid var(--blue);
+  padding: 11px 16px;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.9em;
+  color: var(--text);
+  box-shadow: none;
+  width: auto;
+}
+
+/* ── Dark mode ── */
+.dark-mode .reveal               { background: #0D1525; }
+.dark-mode .reveal .slides section { background: #0D1525; color: #E2E8F0; }
+.dark-mode .reveal h2            { color: #60A5FA; }
+.dark-mode .reveal h3            { color: #93C5FD; }
+.dark-mode .reveal p, .dark-mode .reveal li { color: #CBD5E0; }
+.dark-mode .v-card, .dark-mode .stat-box,
+.dark-mode .card, .dark-mode .prog-item { background: #1A2540; }
+.dark-mode .reveal table td      { border-color: #2D3748; color: #CBD5E0; }
+.dark-mode .reveal table tr:nth-child(even) td { background: #1A2540; }
+.dark-mode .reveal blockquote    { background: #1A2540; color: #CBD5E0; }
+.dark-mode .cas                  { background: linear-gradient(135deg,#1A2540 0%,#1E2030 100%); }
+
+/* ── Toggle dark mode ── */
+.dark-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 1000;
+  background: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 13px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: var(--font);
+  opacity: 0.65;
+  transition: opacity 0.2s;
+}
+
+.dark-toggle:hover { opacity: 1; }
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .reveal { font-size: 16px; }
+  .v-grid { grid-template-columns: repeat(3, 1fr); }
+  .card-grid { grid-template-columns: 1fr 1fr; }
+  .two-col, .three-col { grid-template-columns: 1fr; }
+  .programme { flex-direction: column; }
+}
